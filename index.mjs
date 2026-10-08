@@ -13,8 +13,8 @@ server.on('request', (request, response) => {
     
     // 設定したパスワード（Renderの環境変数で指定。なければデフォルト 'password123'）
     const requiredPassword = process.env.SITE_PASSWORD || 'password123';
-    // 「ユーザー名: admin」と「パスワード」を組み合わせたBase64文字列を作成
-    const expectedAuth = 'Basic ' + Buffer.from('admin:' + requiredPassword).toString('base64');
+    // 「ユーザー名: Fumiya24」と「パスワード」を組み合わせたBase64文字列を作成
+    const expectedAuth = 'Basic ' + Buffer.from('Fumiya24:' + requiredPassword).toString('base64');
 
     if (!auth || auth !== expectedAuth) {
         response.writeHead(401, {
